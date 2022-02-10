@@ -142,7 +142,12 @@ const ThermoType &swakThermophysicalPluginFunction<ThermoType>::thermoInternal(
                 thermoTypeName=word(dict.lookup("thermoType"));
             }
 
-            swakRhoThermoType::fvMeshConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+            auto
+#else
+            swakRhoThermoType::fvMeshConstructorTable::iterator
+#endif
+                cstrIter =
                 swakRhoThermoType::fvMeshConstructorTablePtr_->find(
                     thermoTypeName
                 );
@@ -163,7 +168,12 @@ const ThermoType &swakThermophysicalPluginFunction<ThermoType>::thermoInternal(
                     << endl;
             }
             if(usePsi) {
-                swakPsiThermoType::fvMeshConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+                auto
+#else
+                swakPsiThermoType::fvMeshConstructorTable::iterator
+#endif
+                    cstrIter =
                     swakPsiThermoType::fvMeshConstructorTablePtr_->find(
                         thermoTypeName
                     );
@@ -269,7 +279,12 @@ const solidThermo &swakThermophysicalPluginFunction<solidThermo>::thermoInternal
                 thermoTypeName=word(dict.lookup("thermoType"));
             }
 
-            solidThermo::fvMeshConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+            auto
+#else
+            solidThermo::fvMeshConstructorTable::iterator
+#endif
+                cstrIter =
                 solidThermo::fvMeshConstructorTablePtr_->find(
                     thermoTypeName
                 );

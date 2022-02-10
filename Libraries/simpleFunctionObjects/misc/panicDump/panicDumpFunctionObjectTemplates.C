@@ -94,7 +94,7 @@ bool panicDumpFunctionObject::check() const
             if(lastTimes_.valid()) {
                 Pout << "Writing last timesteps" << endl;
                 const_cast<panicDumpFunctionObject&>(*this).
-                    lastTimes_->write();
+                    lastTimes_->write(time());
             }
 
             FatalErrorIn("panicDumpFunctionObject")

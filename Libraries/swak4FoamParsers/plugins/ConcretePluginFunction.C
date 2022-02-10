@@ -80,7 +80,12 @@ autoPtr<ConcretePluginFunction<DriverType> > ConcretePluginFunction<DriverType>:
                 << endl
                 << exit(FatalError);
         }
-    typename nameConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    typename nameConstructorTable::iterator
+#endif
+        cstrIter =
         nameConstructorTablePtr_->find(name);
     if(cstrIter==nameConstructorTablePtr_->end()) {
         FatalErrorIn(
@@ -132,7 +137,12 @@ bool ConcretePluginFunction<DriverType>::exists (
             forAll(names,nameI)
             {
                 const word &theName=names[nameI];
-                typename nameConstructorTable::iterator iter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+                auto
+#else
+                typename nameConstructorTable::iterator
+#endif
+                    iter =
                     nameConstructorTablePtr_->find(theName);
                 Info << "  " << theName << ":" << endl
                     << "    " << iter()(driver,theName)->helpText() << endl;
@@ -142,7 +152,12 @@ bool ConcretePluginFunction<DriverType>::exists (
         }
     }
 
-    typename nameConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    typename nameConstructorTable::iterator
+#endif
+        cstrIter =
         nameConstructorTablePtr_->find(name);
 
     return cstrIter!=nameConstructorTablePtr_->end();

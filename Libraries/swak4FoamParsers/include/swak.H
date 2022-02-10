@@ -804,6 +804,10 @@ Contributors/Copyright:
 #define FOAM_FVSCHEMES_READ_RETURNS_SCHEME_LOOKUP
 #endif
 
+#if (OPENFOAM_COM >= 2109)
+#define FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+#endif
+
 
 #include "swakVersion.H"
 #include "DebugOStream.H"

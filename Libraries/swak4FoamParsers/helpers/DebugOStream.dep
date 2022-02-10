@@ -1,0 +1,7 @@
+$(OBJECTS_DIR)/DebugOStream.o: helpers/DebugOStream.dep
+helpers/DebugOStream.dep: helpers/DebugOStream.C
+helpers/DebugOStream.dep: helpers/DebugOStream.H
+$(OBJECTS_DIR)/DebugOStream.o: $(EXE_DEP)
+$(OBJECTS_DIR)/DebugOStream.o:
+	@SOURCE_DIR=helpers
+	SOURCE=helpers/DebugOStream.C ; $(Ctoo)

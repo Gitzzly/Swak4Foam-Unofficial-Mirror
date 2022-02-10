@@ -165,7 +165,12 @@ dynamicFunctionObjectListProxy::dynamicDictionaryProvider::New(
     const dictionary& dict,
     const dynamicFunctionObjectListProxy &owner
 ){
-    dictionaryConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    dictionaryConstructorTable::iterator
+#endif
+        cstrIter =
         dictionaryConstructorTablePtr_->find(type);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

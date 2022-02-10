@@ -125,7 +125,7 @@ label TimeClone::copyObjects(const objectRegistry &src,objectRegistry &dst)
     label cnt=0;
 
     forAllConstIter(objectRegistry,src,it) {
-	const word &name=it.key();
+        const word &name=it.key();
         const regIOobject &obj=*(*it);
 
         Dbug << name << " is class " << obj.headerClassName() << endl;

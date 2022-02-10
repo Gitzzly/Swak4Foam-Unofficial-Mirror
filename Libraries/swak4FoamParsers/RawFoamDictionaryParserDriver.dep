@@ -1,0 +1,12 @@
+$(OBJECTS_DIR)/RawFoamDictionaryParserDriver.o: RawFoamDictionaryParserDriver.dep
+RawFoamDictionaryParserDriver.dep: RawFoamDictionaryParserDriver.C
+RawFoamDictionaryParserDriver.dep: RawFoamDictionaryParserDriver.H
+RawFoamDictionaryParserDriver.dep: lnInclude/swak.H
+RawFoamDictionaryParserDriver.dep: foamVersion4swak.H
+RawFoamDictionaryParserDriver.dep: lnInclude/swakVersion.H
+RawFoamDictionaryParserDriver.dep: lnInclude/DebugOStream.H
+RawFoamDictionaryParserDriver.dep: lnInclude/BackportMacros.H
+$(OBJECTS_DIR)/RawFoamDictionaryParserDriver.o: $(EXE_DEP)
+$(OBJECTS_DIR)/RawFoamDictionaryParserDriver.o:
+	@SOURCE_DIR=.
+	SOURCE=RawFoamDictionaryParserDriver.C ; $(Ctoo)

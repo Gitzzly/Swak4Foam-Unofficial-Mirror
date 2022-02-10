@@ -1,0 +1,18 @@
+$(OBJECTS_DIR)/StoredExpressionResult.o: ExpressionResult/StoredExpressionResult.dep
+ExpressionResult/StoredExpressionResult.dep: ExpressionResult/StoredExpressionResult.C
+ExpressionResult/StoredExpressionResult.dep: ExpressionResult/StoredExpressionResult.H
+ExpressionResult/StoredExpressionResult.dep: ExpressionResult/ExpressionResult.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/swak.H
+ExpressionResult/StoredExpressionResult.dep: foamVersion4swak.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/swakVersion.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/DebugOStream.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/BackportMacros.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/swakPTraitsSpecialization.H
+ExpressionResult/StoredExpressionResult.dep: ExpressionResult/ExpressionResultI.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/swakExprString.H
+ExpressionResult/StoredExpressionResult.dep: lnInclude/swakString.H
+ExpressionResult/StoredExpressionResult.dep: ExpressionResult/StoredExpressionResultI.H
+$(OBJECTS_DIR)/StoredExpressionResult.o: $(EXE_DEP)
+$(OBJECTS_DIR)/StoredExpressionResult.o:
+	@SOURCE_DIR=ExpressionResult
+	SOURCE=ExpressionResult/StoredExpressionResult.C ; $(Ctoo)

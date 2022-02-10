@@ -1,0 +1,12 @@
+$(OBJECTS_DIR)/outputFilterOutputControl.o: ../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: ../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.C
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: lnInclude/swak.H
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: foamVersion4swak.H
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: lnInclude/swakVersion.H
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: lnInclude/DebugOStream.H
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: lnInclude/BackportMacros.H
+../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.dep: ../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.H
+$(OBJECTS_DIR)/outputFilterOutputControl.o: $(EXE_DEP)
+$(OBJECTS_DIR)/outputFilterOutputControl.o:
+	@SOURCE_DIR=../filesThatAreOnlyInSomeDistributions/OutputFilerDropin
+	SOURCE=../filesThatAreOnlyInSomeDistributions/OutputFilerDropin/outputFilterOutputControl.C ; $(Ctoo)

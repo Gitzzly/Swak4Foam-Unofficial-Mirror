@@ -83,7 +83,12 @@ executeIfFunctionObjectPresentFunctionObject::executeIfFunctionObjectPresentFunc
 
 bool executeIfFunctionObjectPresentFunctionObject::condition()
 {
-    dictionaryConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    dictionaryConstructorTable::iterator
+#endif
+        cstrIter =
         dictionaryConstructorTablePtr_->find(functionObjectName_);
 
     return cstrIter != dictionaryConstructorTablePtr_->end();

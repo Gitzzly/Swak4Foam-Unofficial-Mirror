@@ -109,7 +109,7 @@ void writeAndEndFunctionObject::writeSimple()
         const_cast<Time &>(time()).writeAndEnd();
         if(lastTimes_.valid()) {
             Pout << "Writing old times" << endl;
-            lastTimes_->write();
+            lastTimes_->write(time());
         }
     }
     if(lastTimes_.valid()) {

@@ -171,7 +171,7 @@ void writeOldTimesOnSignalFunctionObject::sigHandler(int sig) {
                 sh.writeCurrent_=false;
             }
             Pout << "Writing old times:" << endl;
-            sh.times_.write();
+            sh.times_.write(sh.theTime_);
             if(sh.writeCurrent_) {
                 Pout << "Writing current time " << sh.theTime_.value() << endl;
                 WarningIn("writeOldTimesOnSignalFunctionObject::sigHandler(int sig)")

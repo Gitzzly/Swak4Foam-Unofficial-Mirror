@@ -1,0 +1,16 @@
+$(OBJECTS_DIR)/GlobalVariablesRepository.o: repositories/GlobalVariablesRepository.dep
+repositories/GlobalVariablesRepository.dep: repositories/GlobalVariablesRepository.C
+repositories/GlobalVariablesRepository.dep: repositories/GlobalVariablesRepository.H
+repositories/GlobalVariablesRepository.dep: lnInclude/ExpressionResult.H
+repositories/GlobalVariablesRepository.dep: lnInclude/swak.H
+repositories/GlobalVariablesRepository.dep: foamVersion4swak.H
+repositories/GlobalVariablesRepository.dep: lnInclude/swakVersion.H
+repositories/GlobalVariablesRepository.dep: lnInclude/DebugOStream.H
+repositories/GlobalVariablesRepository.dep: lnInclude/BackportMacros.H
+repositories/GlobalVariablesRepository.dep: lnInclude/swakPTraitsSpecialization.H
+repositories/GlobalVariablesRepository.dep: lnInclude/ExpressionResultI.H
+repositories/GlobalVariablesRepository.dep: lnInclude/swakTime.H
+$(OBJECTS_DIR)/GlobalVariablesRepository.o: $(EXE_DEP)
+$(OBJECTS_DIR)/GlobalVariablesRepository.o:
+	@SOURCE_DIR=repositories
+	SOURCE=repositories/GlobalVariablesRepository.C ; $(Ctoo)

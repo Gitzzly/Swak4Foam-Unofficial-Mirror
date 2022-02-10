@@ -52,7 +52,12 @@ autoPtr<entryToExpression> entryToExpression::New
     const word& name
 )
 {
-    nothingConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    nothingConstructorTable::iterator
+#endif
+        cstrIter =
         nothingConstructorTablePtr_->find(name);
 
     if (cstrIter == nothingConstructorTablePtr_->end())

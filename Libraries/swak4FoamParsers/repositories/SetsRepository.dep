@@ -1,0 +1,31 @@
+$(OBJECTS_DIR)/SetsRepository.o: repositories/SetsRepository.dep
+repositories/SetsRepository.dep: repositories/SetsRepository.C
+repositories/SetsRepository.dep: repositories/SetsRepository.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/sampling/lnInclude/sampledSet.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/sampling/lnInclude/coordSet.H
+repositories/SetsRepository.dep: repositories/RepositoryBase.H
+repositories/SetsRepository.dep: lnInclude/DebugOStream.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/sampling/lnInclude/writer.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/sampling/lnInclude/writer.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/meshTools/lnInclude/meshSearch.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudTemplate.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudDistributeTemplate.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudDistributeTemplate.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudTemplate.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/CloudTemplateIO.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Particle.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/ParticleI.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/Particle.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/ParticleIO.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/IOPosition.H
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/IOPosition.C
+repositories/SetsRepository.dep: $(WM_PROJECT_DIR)/src/lagrangian/basic/lnInclude/passiveParticle.H
+repositories/SetsRepository.dep: lnInclude/swakTime.H
+repositories/SetsRepository.dep: lnInclude/swak.H
+repositories/SetsRepository.dep: foamVersion4swak.H
+repositories/SetsRepository.dep: lnInclude/swakVersion.H
+repositories/SetsRepository.dep: lnInclude/BackportMacros.H
+$(OBJECTS_DIR)/SetsRepository.o: $(EXE_DEP)
+$(OBJECTS_DIR)/SetsRepository.o:
+	@SOURCE_DIR=repositories
+	SOURCE=repositories/SetsRepository.C ; $(Ctoo)

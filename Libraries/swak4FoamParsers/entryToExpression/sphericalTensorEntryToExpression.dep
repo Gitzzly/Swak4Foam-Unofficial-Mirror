@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/sphericalTensorEntryToExpression.o: entryToExpression/sphericalTensorEntryToExpression.dep
+entryToExpression/sphericalTensorEntryToExpression.dep: entryToExpression/sphericalTensorEntryToExpression.C
+entryToExpression/sphericalTensorEntryToExpression.dep: entryToExpression/sphericalTensorEntryToExpression.H
+entryToExpression/sphericalTensorEntryToExpression.dep: entryToExpression/entryToExpression.H
+entryToExpression/sphericalTensorEntryToExpression.dep: lnInclude/swak.H
+entryToExpression/sphericalTensorEntryToExpression.dep: foamVersion4swak.H
+entryToExpression/sphericalTensorEntryToExpression.dep: lnInclude/swakVersion.H
+entryToExpression/sphericalTensorEntryToExpression.dep: lnInclude/DebugOStream.H
+entryToExpression/sphericalTensorEntryToExpression.dep: lnInclude/BackportMacros.H
+entryToExpression/sphericalTensorEntryToExpression.dep: entryToExpression/entryToExpressionI.H
+$(OBJECTS_DIR)/sphericalTensorEntryToExpression.o: $(EXE_DEP)
+$(OBJECTS_DIR)/sphericalTensorEntryToExpression.o:
+	@SOURCE_DIR=entryToExpression
+	SOURCE=entryToExpression/sphericalTensorEntryToExpression.C ; $(Ctoo)

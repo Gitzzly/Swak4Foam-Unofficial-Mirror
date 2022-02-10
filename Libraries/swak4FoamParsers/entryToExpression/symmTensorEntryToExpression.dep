@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/symmTensorEntryToExpression.o: entryToExpression/symmTensorEntryToExpression.dep
+entryToExpression/symmTensorEntryToExpression.dep: entryToExpression/symmTensorEntryToExpression.C
+entryToExpression/symmTensorEntryToExpression.dep: entryToExpression/symmTensorEntryToExpression.H
+entryToExpression/symmTensorEntryToExpression.dep: entryToExpression/entryToExpression.H
+entryToExpression/symmTensorEntryToExpression.dep: lnInclude/swak.H
+entryToExpression/symmTensorEntryToExpression.dep: foamVersion4swak.H
+entryToExpression/symmTensorEntryToExpression.dep: lnInclude/swakVersion.H
+entryToExpression/symmTensorEntryToExpression.dep: lnInclude/DebugOStream.H
+entryToExpression/symmTensorEntryToExpression.dep: lnInclude/BackportMacros.H
+entryToExpression/symmTensorEntryToExpression.dep: entryToExpression/entryToExpressionI.H
+$(OBJECTS_DIR)/symmTensorEntryToExpression.o: $(EXE_DEP)
+$(OBJECTS_DIR)/symmTensorEntryToExpression.o:
+	@SOURCE_DIR=entryToExpression
+	SOURCE=entryToExpression/symmTensorEntryToExpression.C ; $(Ctoo)

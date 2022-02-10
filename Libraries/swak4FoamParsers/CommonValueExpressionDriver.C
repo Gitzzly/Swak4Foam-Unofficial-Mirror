@@ -436,7 +436,12 @@ autoPtr<CommonValueExpressionDriver> CommonValueExpressionDriver::New
     setUnsetDefaultMesh(mesh);
 
     word driverType(dict.lookup("valueType"));
-    dictionaryConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    dictionaryConstructorTable::iterator
+#endif
+        cstrIter =
         dictionaryConstructorTablePtr_->find(driverType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())
@@ -473,7 +478,12 @@ autoPtr<CommonValueExpressionDriver> CommonValueExpressionDriver::New
 {
     setUnsetDefaultMesh(mesh);
 
-    idNameConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    idNameConstructorTable::iterator
+#endif
+        cstrIter =
         idNameConstructorTablePtr_->find(driverType);
 
     if (cstrIter == idNameConstructorTablePtr_->end())

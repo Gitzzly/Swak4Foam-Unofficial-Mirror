@@ -1573,7 +1573,7 @@ and create a new branch
 where `<branchname>` is an easily identifiable name that makes the
 purpose of the branch clear (for instance
 `hotfix/WrongRandomFunction` or `feature/HyperbolicFunctions`. For
-details see [6.2.2](#org64ad6a5) below). Don't work on the
+details see [6.2.2](#orgebc7080) below). Don't work on the
 `default` branch or any other branches that are not "yours". Such
 contributions will not be merged
 
@@ -1629,7 +1629,7 @@ These topics may be "new" for the average OF-developer:
     hg diff -c 8604e865cce6
 
 
-<a id="org64ad6a5"></a>
+<a id="orgebc7080"></a>
 
 ### Repository organization
 
@@ -7128,3 +7128,58 @@ and `noExcute` skip execution if the functionality is called via
 `execute()` or `write()`
 
 This has to be done because of changes in the API of function objects
+
+
+## Next release - version number : 202x.yy
+
+
+### New supported OpenFOAM versions
+
+
+### New features
+
+
+### Enhancements
+
+
+#### Stored times are now shared
+
+Function objects that store fields from old times because they
+might write these times later now can share this field data. This
+reduces the memory usage of these function objects if more than
+one stores old time data
+
+This new behaviour is the default but can be switched off with
+the optional setting `shareTimeData`
+
+Still every function objects copies time data so the actual time
+data is from the state when the last function object copied
+data. This might have an effect if another function object
+modified field data
+
+
+### Bug fixes
+
+
+### Incompatibilities
+
+
+#### Shared time data in `TimeCloneList` might lead to slightly different data written
+
+As the default behaviour is now that all function objects using
+`TimeCloneList` to store time data this means that slightly
+different data might be written as the stored data might not come
+from the current function object but from the last function
+object that stored data
+
+
+### Infrastructure
+
+
+### Documentation
+
+
+### Examples
+
+
+### Internals (for developers)

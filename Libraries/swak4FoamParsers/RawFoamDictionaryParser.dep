@@ -1,0 +1,13 @@
+$(OBJECTS_DIR)/RawFoamDictionaryParser.o: RawFoamDictionaryParser.dep
+RawFoamDictionaryParser.dep: RawFoamDictionaryParser.yy
+RawFoamDictionaryParser.dep: lnInclude/swak.H
+RawFoamDictionaryParser.dep: foamVersion4swak.H
+RawFoamDictionaryParser.dep: lnInclude/swakVersion.H
+RawFoamDictionaryParser.dep: lnInclude/DebugOStream.H
+RawFoamDictionaryParser.dep: lnInclude/BackportMacros.H
+RawFoamDictionaryParser.dep: lnInclude/swakString.H
+RawFoamDictionaryParser.dep: RawFoamDictionaryParserDriver.H
+$(OBJECTS_DIR)/RawFoamDictionaryParser.o: $(EXE_DEP)
+$(OBJECTS_DIR)/RawFoamDictionaryParser.o:
+	@SOURCE_DIR=.
+	SOURCE=RawFoamDictionaryParser.yy ; $(yytoo)

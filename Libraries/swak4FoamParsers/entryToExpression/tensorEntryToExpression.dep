@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/tensorEntryToExpression.o: entryToExpression/tensorEntryToExpression.dep
+entryToExpression/tensorEntryToExpression.dep: entryToExpression/tensorEntryToExpression.C
+entryToExpression/tensorEntryToExpression.dep: entryToExpression/tensorEntryToExpression.H
+entryToExpression/tensorEntryToExpression.dep: entryToExpression/entryToExpression.H
+entryToExpression/tensorEntryToExpression.dep: lnInclude/swak.H
+entryToExpression/tensorEntryToExpression.dep: foamVersion4swak.H
+entryToExpression/tensorEntryToExpression.dep: lnInclude/swakVersion.H
+entryToExpression/tensorEntryToExpression.dep: lnInclude/DebugOStream.H
+entryToExpression/tensorEntryToExpression.dep: lnInclude/BackportMacros.H
+entryToExpression/tensorEntryToExpression.dep: entryToExpression/entryToExpressionI.H
+$(OBJECTS_DIR)/tensorEntryToExpression.o: $(EXE_DEP)
+$(OBJECTS_DIR)/tensorEntryToExpression.o:
+	@SOURCE_DIR=entryToExpression
+	SOURCE=entryToExpression/tensorEntryToExpression.C ; $(Ctoo)

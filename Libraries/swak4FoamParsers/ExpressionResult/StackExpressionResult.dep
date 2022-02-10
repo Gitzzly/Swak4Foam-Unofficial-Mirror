@@ -1,0 +1,16 @@
+$(OBJECTS_DIR)/StackExpressionResult.o: ExpressionResult/StackExpressionResult.dep
+ExpressionResult/StackExpressionResult.dep: ExpressionResult/StackExpressionResult.C
+ExpressionResult/StackExpressionResult.dep: ExpressionResult/StackExpressionResult.H
+ExpressionResult/StackExpressionResult.dep: ExpressionResult/ExpressionResult.H
+ExpressionResult/StackExpressionResult.dep: lnInclude/swak.H
+ExpressionResult/StackExpressionResult.dep: foamVersion4swak.H
+ExpressionResult/StackExpressionResult.dep: lnInclude/swakVersion.H
+ExpressionResult/StackExpressionResult.dep: lnInclude/DebugOStream.H
+ExpressionResult/StackExpressionResult.dep: lnInclude/BackportMacros.H
+ExpressionResult/StackExpressionResult.dep: lnInclude/swakPTraitsSpecialization.H
+ExpressionResult/StackExpressionResult.dep: ExpressionResult/ExpressionResultI.H
+ExpressionResult/StackExpressionResult.dep: ExpressionResult/StackExpressionResultI.H
+$(OBJECTS_DIR)/StackExpressionResult.o: $(EXE_DEP)
+$(OBJECTS_DIR)/StackExpressionResult.o:
+	@SOURCE_DIR=ExpressionResult
+	SOURCE=ExpressionResult/StackExpressionResult.C ; $(Ctoo)

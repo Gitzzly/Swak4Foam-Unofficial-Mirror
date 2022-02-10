@@ -1,0 +1,18 @@
+$(OBJECTS_DIR)/DelayedExpressionResult.o: ExpressionResult/DelayedExpressionResult.dep
+ExpressionResult/DelayedExpressionResult.dep: ExpressionResult/DelayedExpressionResult.C
+ExpressionResult/DelayedExpressionResult.dep: ExpressionResult/DelayedExpressionResult.H
+ExpressionResult/DelayedExpressionResult.dep: ExpressionResult/ExpressionResult.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/swak.H
+ExpressionResult/DelayedExpressionResult.dep: foamVersion4swak.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/swakVersion.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/DebugOStream.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/BackportMacros.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/swakPTraitsSpecialization.H
+ExpressionResult/DelayedExpressionResult.dep: ExpressionResult/ExpressionResultI.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/swakExprString.H
+ExpressionResult/DelayedExpressionResult.dep: lnInclude/swakString.H
+ExpressionResult/DelayedExpressionResult.dep: ExpressionResult/DelayedExpressionResultI.H
+$(OBJECTS_DIR)/DelayedExpressionResult.o: $(EXE_DEP)
+$(OBJECTS_DIR)/DelayedExpressionResult.o:
+	@SOURCE_DIR=ExpressionResult
+	SOURCE=ExpressionResult/DelayedExpressionResult.C ; $(Ctoo)

@@ -1,0 +1,7 @@
+$(OBJECTS_DIR)/switchableNotImplemented.o: helpers/switchableNotImplemented.dep
+helpers/switchableNotImplemented.dep: helpers/switchableNotImplemented.C
+helpers/switchableNotImplemented.dep: helpers/switchableNotImplemented.H
+$(OBJECTS_DIR)/switchableNotImplemented.o: $(EXE_DEP)
+$(OBJECTS_DIR)/switchableNotImplemented.o:
+	@SOURCE_DIR=helpers
+	SOURCE=helpers/switchableNotImplemented.C ; $(Ctoo)

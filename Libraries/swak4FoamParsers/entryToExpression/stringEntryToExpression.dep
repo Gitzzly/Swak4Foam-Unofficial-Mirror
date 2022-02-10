@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/stringEntryToExpression.o: entryToExpression/stringEntryToExpression.dep
+entryToExpression/stringEntryToExpression.dep: entryToExpression/stringEntryToExpression.C
+entryToExpression/stringEntryToExpression.dep: entryToExpression/stringEntryToExpression.H
+entryToExpression/stringEntryToExpression.dep: entryToExpression/entryToExpression.H
+entryToExpression/stringEntryToExpression.dep: lnInclude/swak.H
+entryToExpression/stringEntryToExpression.dep: foamVersion4swak.H
+entryToExpression/stringEntryToExpression.dep: lnInclude/swakVersion.H
+entryToExpression/stringEntryToExpression.dep: lnInclude/DebugOStream.H
+entryToExpression/stringEntryToExpression.dep: lnInclude/BackportMacros.H
+entryToExpression/stringEntryToExpression.dep: entryToExpression/entryToExpressionI.H
+$(OBJECTS_DIR)/stringEntryToExpression.o: $(EXE_DEP)
+$(OBJECTS_DIR)/stringEntryToExpression.o:
+	@SOURCE_DIR=entryToExpression
+	SOURCE=entryToExpression/stringEntryToExpression.C ; $(Ctoo)

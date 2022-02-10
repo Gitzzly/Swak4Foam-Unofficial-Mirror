@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/dimensionedScalarEntryToExpression.o: entryToExpression/dimensionedScalarEntryToExpression.dep
+entryToExpression/dimensionedScalarEntryToExpression.dep: entryToExpression/dimensionedScalarEntryToExpression.C
+entryToExpression/dimensionedScalarEntryToExpression.dep: entryToExpression/dimensionedScalarEntryToExpression.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: entryToExpression/entryToExpression.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: lnInclude/swak.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: foamVersion4swak.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: lnInclude/swakVersion.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: lnInclude/DebugOStream.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: lnInclude/BackportMacros.H
+entryToExpression/dimensionedScalarEntryToExpression.dep: entryToExpression/entryToExpressionI.H
+$(OBJECTS_DIR)/dimensionedScalarEntryToExpression.o: $(EXE_DEP)
+$(OBJECTS_DIR)/dimensionedScalarEntryToExpression.o:
+	@SOURCE_DIR=entryToExpression
+	SOURCE=entryToExpression/dimensionedScalarEntryToExpression.C ; $(Ctoo)

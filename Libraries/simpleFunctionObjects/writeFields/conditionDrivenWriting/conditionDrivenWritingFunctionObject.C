@@ -196,7 +196,7 @@ void conditionDrivenWritingFunctionObject::storePreviousState()
 void conditionDrivenWritingFunctionObject::writePreviousState()
 {
     if(lastTimes_.valid()) {
-        lastTimes_->write();
+        lastTimes_->write(time());
     } else {
         WarningIn("conditionDrivenWritingFunctionObject::writePreviousState")
             << "Logic error"

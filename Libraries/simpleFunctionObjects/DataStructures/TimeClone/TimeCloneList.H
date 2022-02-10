@@ -70,7 +70,29 @@ class TimeCloneList
 
     void clear();
 
+    //- number of clone lists apart from the shared one
     static label count_;
+
+    //- singleton for shared time data
+    static autoPtr<TimeCloneList> shared_;
+
+    //- number of steps to store
+    label nrSteps_;
+
+protected:
+
+    //- get the singleton with the shared timesteps
+    static TimeCloneList &shared();
+
+    //- extend the capacity of the list
+    void resize(label nr);
+
+    //- is this the shared list
+    bool isShared() const;
+
+private:
+    //- empty constructor to be used only by the singleton
+    TimeCloneList();
 
 public:
 
@@ -89,7 +111,7 @@ public:
     void copy(const Time &);
 
     //- Write the time-directory
-    bool write(const bool force=false);
+    bool write(const Time &current,const bool force=false, label nrWrite_=-1);
 
     //- Destructor
     virtual ~TimeCloneList();
@@ -97,7 +119,8 @@ public:
 
     // Member Functions
 
-    bool has(const Time& other);
+    //- check if the timestep is already there
+    bool has(const Time &other) const;
 };
 
 

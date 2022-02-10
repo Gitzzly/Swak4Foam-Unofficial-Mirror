@@ -1,0 +1,13 @@
+$(OBJECTS_DIR)/RepositoryBase.o: repositories/RepositoryBase.dep
+repositories/RepositoryBase.dep: repositories/RepositoryBase.C
+repositories/RepositoryBase.dep: repositories/RepositoryBase.H
+repositories/RepositoryBase.dep: lnInclude/DebugOStream.H
+repositories/RepositoryBase.dep: lnInclude/swakTime.H
+repositories/RepositoryBase.dep: lnInclude/swak.H
+repositories/RepositoryBase.dep: foamVersion4swak.H
+repositories/RepositoryBase.dep: lnInclude/swakVersion.H
+repositories/RepositoryBase.dep: lnInclude/BackportMacros.H
+$(OBJECTS_DIR)/RepositoryBase.o: $(EXE_DEP)
+$(OBJECTS_DIR)/RepositoryBase.o:
+	@SOURCE_DIR=repositories
+	SOURCE=repositories/RepositoryBase.C ; $(Ctoo)

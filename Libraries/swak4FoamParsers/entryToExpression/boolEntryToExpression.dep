@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/boolEntryToExpression.o: entryToExpression/boolEntryToExpression.dep
+entryToExpression/boolEntryToExpression.dep: entryToExpression/boolEntryToExpression.C
+entryToExpression/boolEntryToExpression.dep: entryToExpression/boolEntryToExpression.H
+entryToExpression/boolEntryToExpression.dep: entryToExpression/entryToExpression.H
+entryToExpression/boolEntryToExpression.dep: lnInclude/swak.H
+entryToExpression/boolEntryToExpression.dep: foamVersion4swak.H
+entryToExpression/boolEntryToExpression.dep: lnInclude/swakVersion.H
+entryToExpression/boolEntryToExpression.dep: lnInclude/DebugOStream.H
+entryToExpression/boolEntryToExpression.dep: lnInclude/BackportMacros.H
+entryToExpression/boolEntryToExpression.dep: entryToExpression/entryToExpressionI.H
+$(OBJECTS_DIR)/boolEntryToExpression.o: $(EXE_DEP)
+$(OBJECTS_DIR)/boolEntryToExpression.o:
+	@SOURCE_DIR=entryToExpression
+	SOURCE=entryToExpression/boolEntryToExpression.C ; $(Ctoo)

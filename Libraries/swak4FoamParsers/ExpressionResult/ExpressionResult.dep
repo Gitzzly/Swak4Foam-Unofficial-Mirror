@@ -1,0 +1,14 @@
+$(OBJECTS_DIR)/ExpressionResult.o: ExpressionResult/ExpressionResult.dep
+ExpressionResult/ExpressionResult.dep: ExpressionResult/ExpressionResult.C
+ExpressionResult/ExpressionResult.dep: ExpressionResult/ExpressionResult.H
+ExpressionResult/ExpressionResult.dep: lnInclude/swak.H
+ExpressionResult/ExpressionResult.dep: foamVersion4swak.H
+ExpressionResult/ExpressionResult.dep: lnInclude/swakVersion.H
+ExpressionResult/ExpressionResult.dep: lnInclude/DebugOStream.H
+ExpressionResult/ExpressionResult.dep: lnInclude/BackportMacros.H
+ExpressionResult/ExpressionResult.dep: lnInclude/swakPTraitsSpecialization.H
+ExpressionResult/ExpressionResult.dep: ExpressionResult/ExpressionResultI.H
+$(OBJECTS_DIR)/ExpressionResult.o: $(EXE_DEP)
+$(OBJECTS_DIR)/ExpressionResult.o:
+	@SOURCE_DIR=ExpressionResult
+	SOURCE=ExpressionResult/ExpressionResult.C ; $(Ctoo)

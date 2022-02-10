@@ -82,7 +82,12 @@ autoPtr<CloudProxy> CloudProxy::New(
     Sbug << "Looking for " << cloudType << " in "
         << cloudConstructorTablePtr_->sortedToc() << endl;
 
-    cloudConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    cloudConstructorTable::iterator
+#endif
+        cstrIter =
         cloudConstructorTablePtr_->find(cloudType);
 
     if (cstrIter == cloudConstructorTablePtr_->end())
@@ -127,7 +132,12 @@ autoPtr<CloudProxy> CloudProxy::New(
         Sbug << "Using alternate type " << cloudType << endl;
     }
 
-    cloudConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+    auto
+#else
+    cloudConstructorTable::iterator
+#endif
+        cstrIter =
         cloudConstructorTablePtr_->find(cloudType);
 
     if (cstrIter == cloudConstructorTablePtr_->end())

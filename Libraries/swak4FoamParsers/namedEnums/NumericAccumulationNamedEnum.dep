@@ -1,0 +1,12 @@
+$(OBJECTS_DIR)/NumericAccumulationNamedEnum.o: namedEnums/NumericAccumulationNamedEnum.dep
+namedEnums/NumericAccumulationNamedEnum.dep: namedEnums/NumericAccumulationNamedEnum.C
+namedEnums/NumericAccumulationNamedEnum.dep: namedEnums/NumericAccumulationNamedEnum.H
+namedEnums/NumericAccumulationNamedEnum.dep: lnInclude/swak.H
+namedEnums/NumericAccumulationNamedEnum.dep: foamVersion4swak.H
+namedEnums/NumericAccumulationNamedEnum.dep: lnInclude/swakVersion.H
+namedEnums/NumericAccumulationNamedEnum.dep: lnInclude/DebugOStream.H
+namedEnums/NumericAccumulationNamedEnum.dep: lnInclude/BackportMacros.H
+$(OBJECTS_DIR)/NumericAccumulationNamedEnum.o: $(EXE_DEP)
+$(OBJECTS_DIR)/NumericAccumulationNamedEnum.o:
+	@SOURCE_DIR=namedEnums
+	SOURCE=namedEnums/NumericAccumulationNamedEnum.C ; $(Ctoo)

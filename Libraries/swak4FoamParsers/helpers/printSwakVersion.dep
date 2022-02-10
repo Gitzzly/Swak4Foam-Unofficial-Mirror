@@ -1,0 +1,12 @@
+$(OBJECTS_DIR)/printSwakVersion.o: helpers/printSwakVersion.dep
+helpers/printSwakVersion.dep: helpers/printSwakVersion.C
+helpers/printSwakVersion.dep: helpers/printSwakVersion.H
+helpers/printSwakVersion.dep: lnInclude/swak.H
+helpers/printSwakVersion.dep: foamVersion4swak.H
+helpers/printSwakVersion.dep: lnInclude/swakVersion.H
+helpers/printSwakVersion.dep: helpers/DebugOStream.H
+helpers/printSwakVersion.dep: helpers/BackportMacros.H
+$(OBJECTS_DIR)/printSwakVersion.o: $(EXE_DEP)
+$(OBJECTS_DIR)/printSwakVersion.o:
+	@SOURCE_DIR=helpers
+	SOURCE=helpers/printSwakVersion.C ; $(Ctoo)

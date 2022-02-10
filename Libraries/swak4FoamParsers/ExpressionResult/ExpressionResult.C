@@ -178,7 +178,12 @@ autoPtr<ExpressionResult> ExpressionResult::New
     bool unset=dict.lookupOrDefault<bool>("unsetValue",false);
 
     if(unset) {
-        nothingConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+        auto
+#else
+        nothingConstructorTable::iterator
+#endif
+            cstrIter =
             nothingConstructorTablePtr_->find(resultType);
 
         if (cstrIter == nothingConstructorTablePtr_->end())
@@ -206,7 +211,12 @@ autoPtr<ExpressionResult> ExpressionResult::New
                 cstrIter()()
             );
     } else {
-        dictionaryConstructorTable::iterator cstrIter =
+#ifdef FOAM_NO_FOO_CONSTRUCTOR_TABLE_TYPE_IN_RUNTIME_SELECTION
+        auto
+#else
+        dictionaryConstructorTable::iterator
+#endif
+            cstrIter =
             dictionaryConstructorTablePtr_->find(resultType);
 
         if (cstrIter == dictionaryConstructorTablePtr_->end())
